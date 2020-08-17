@@ -1,4 +1,4 @@
-import Dispatch
+//import Dispatch
 
 public final class Parallel<A> {
   private let compute: (@escaping (A) -> ()) -> ()
