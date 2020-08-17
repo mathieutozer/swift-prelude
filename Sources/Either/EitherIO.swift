@@ -1,4 +1,5 @@
-//import Dispatch
+#if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
+import Dispatch
 import Foundation
 import Prelude
 
@@ -179,3 +180,5 @@ public func flatMap<E, A, B>(_ f: @escaping (A) -> EitherIO<E, B>) -> (EitherIO<
 public func >=> <E, A, B, C>(f: @escaping (A) -> EitherIO<E, B>, g: @escaping (B) -> EitherIO<E, C>) -> (A) -> EitherIO<E, C> {
   return f >>> flatMap(g)
 }
+
+#endif

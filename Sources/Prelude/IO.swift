@@ -1,4 +1,5 @@
-//import Dispatch
+#if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
+import Dispatch
 import Foundation
 
 public struct IO<A> {
@@ -172,3 +173,4 @@ extension IO: Monoid where A: Monoid {
     return pure(A.empty)
   }
 }
+#endif

@@ -1,4 +1,5 @@
-//import Dispatch
+#if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
+import Dispatch
 
 public final class Parallel<A> {
   private let compute: (@escaping (A) -> ()) -> ()
@@ -152,3 +153,4 @@ extension Parallel: Monoid where A: Monoid {
     return pure(A.empty)
   }
 }
+#endif
